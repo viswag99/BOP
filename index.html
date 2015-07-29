@@ -1,0 +1,295 @@
+<!Doctype html>
+<html>
+   <head>
+      <title>BOP</title>
+      
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  
+      <style>#map-page, #map-canvas { width: 100%; height: 70%; padding: 0; }</style>
+	  
+	  <link rel="stylesheet" href="themes/Oyoyoyster.min.css" /> 
+	  <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+
+	  <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+	  
+      <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+	  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+      <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	
+	  <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	  <script src="main.js"></script>
+   </head>
+   
+   <body>
+   
+	   <!-- Page 1 Home -->
+	   
+	  <div  data-role="page" id="map-page">
+			<div data-role="header" data-theme="a">
+				<h1 style="font-size:25px"; class="p";> BOP </h1>
+			</div>
+			<div role="main" class="ui-content" id="map-canvas">
+				<!-- map loads here... -->
+			</div>
+				<div data-role="collapsible" data-collapsed-icon="arrow-d">
+					<h3>Restaurants</h3>
+					 <ul data-role="listview" data-insert="true" data-filter="true" data-filter-placeholder="Participating Restaurants">
+						<li> <a href="https://foursquare.com/aquagrillnyc"> Aquagrill</a> </li>
+						<li> <a href="https://foursquare.com/v/brooklyn-crab/4f107e84e5e852ca73ddd2fa">Brooklyn Crab</a></li>
+						<li> <a href="https://foursquare.com/v/lobster-place/49c42857f964a5209f561fe3"> The Lobster Place</a> </li>
+						<li> <a href="https://foursquare.com/v/grand-central-oyster-bar/3fd66200f964a52074e71ee3"> Grand Central Oyster Bar</a> </li>
+						<li> <a href="https://foursquare.com/oceananyc"> Oceana</a> </li>
+						<li> <a href="https://foursquare.com/v/maison-premiere/4d34a091c6cba35dec2f357a"> Maison Premiere</a> </li>
+					</ul>
+				</div>
+				<div style="height:40px">
+				</div>
+			<div data-role="footer" style="position:fixed;bottom:0; width:100%">
+				<div data-id="navig" data-role="navbar">
+				   <ul>
+					  <li><a href="#map-page" class="ui-btn-active ui-state-persist"><img src="assets/home.gif" style="width:16px;border-radius:8px;margin:0;padding:0"/>&nbsp;&nbsp; Maps</a></li>
+					  <li> <a href="#page2" class="ui-btn "><img src="assets/donate.gif" style="width:16px;border-radius:8px;margin:0;padding:0"/>&nbsp;&nbsp;Donate</a></li>
+					  <li><a href="#page3" class="ui-btn"><img src="assets/profile.gif" style="width:16px;border-radius:8px;margin:0;padding:0"/>&nbsp;&nbsp;Profile</a></li>
+					  <li><a href="#page4" class="ui-btn"><img src="assets/settings.gif" style="width:16px;border-radius:8px;margin:0;padding:0"/>&nbsp;&nbsp;About </a></li>
+				   </ul>
+				</div>
+			</div>
+		 
+		 </div>
+		 
+		 <!-- Page 2: Donate -->
+		 
+		  <div data-role="page" id="page2">
+			 
+			 <div data-role="header">
+				<h1 style="font-size:25px"; class="p";> BOP </h1>
+			 </div>
+			 
+			<div data-role="content">
+				<p>Make a donation towards the Billion Oyster Project!</p>
+				
+				<p>If you make a donation, you will be able to buy a plot of an oyster reef that is currently being made with recycled oyster shells!</p>
+				
+				<p>What amount would you like to donate?</p>
+				<br>
+
+			
+			
+			<!--prototype of the money select for donations-->
+			<div>
+				<ul data-role="listview">
+					<li><a href="#">$5</a> </li>
+					<li><a href="#">$10</a></li>
+					<li><a href="#">$15</a></li>
+					<li><a href="#">Other Amount</a></li>
+				</ul>
+			</div>
+			
+			<div>
+			<label for="moneySlider">Donation Amount in USD:</label>
+			<input type="range" name="moneySlider" id="moneySlider" value ="15" min="15" max="100" step="5">
+			</div>
+		
+		<div>
+			<form> 
+				Name:<br>
+				<input type="text" name="firstName"  size="35" placeholder="As appears on card">
+			
+				Credit Card Number:<br>
+				<input type="text" name="creditCard">
+				<div style="float:left">
+				CVV:<br>
+				<input type="text" name="securityCode">
+				
+				Expiration Month:<br>
+				<input type="text" name="month" width="50%" >
+				Expiration Year:<br> 
+				<input type="text" name="year" width="50%">
+				</div>
+				</form>
+					
+					<script type="text/javascript" charset="utf-8">
+	
+					function showAlerts()
+					{
+					alert("Your Donation has been submitted and is greatly appreciated. Your plot of reef is now visible on the map page!");
+					
+					var contentString ="Your Reef";
+					var infowindow = new google.maps.InfoWindow({
+							  content: contentString
+						  });
+					
+					var marker8 = new google.maps.Marker({
+						position: new google.maps.LatLng(40.712145, -74.018103),
+						map: map,
+						infowindow: infowindow,
+						title: "Your Reef!"
+					});
+					infowindow.open(map, marker8);
+
+					window.location.href=("#map-page");
+					}
+					</script>
+					<button type="button" onclick="showAlerts ()">
+					Donate
+						</button>
+			
+				<div style="height:75px">
+				</div>
+				</div>
+				</div>
+	
+			<div data-role="footer" style="position:fixed;bottom:0; width:100%">
+				<div data-id="navig" data-role="navbar">
+				   <ul>
+					  <li><a href="#map-page"class="ui-btn"><img src="assets/home.gif" style="width:16px;border-radius:8px;margin:0;padding:0"/>&nbsp;&nbsp; Maps</a></li>
+					  <li> <a href="#page2" class="ui-btn-active ui-state-persist"><img src="assets/donate.gif" style="width:16px;border-radius:8px;margin:0;padding:0"/>&nbsp;&nbsp; Donate</a></li>
+					  <li><a href="#page3" class="ui-btn"><img src="assets/profile.gif" style="width:16px;border-radius:8px;margin:0;padding:0"/>&nbsp;&nbsp;Profile</a></li>
+					  <li><a href="#page4" class="ui-btn"><img src="assets/settings.gif" style="width:16px;border-radius:8px;margin:0;padding:0"/>&nbsp;&nbsp;About </a></li>
+				   </ul>
+				</div>
+			 </div>
+			 
+		 </div>
+		 
+		 <!-- Page 3: Profile -->
+		 
+		<div data-role="page" id="page3">
+			
+			<div data-role="header" >
+				<h1 style="font-size:25px"; class="p";> BOP </h1>
+			</div>
+			
+			<div data-role="content">
+					<h1> Profile </h1>
+					
+					<img style="float:left" src="assets/pro.png" >
+					<br style="clear:both">
+					<p> Viswa Gunasegaram </p>
+					<p> viswag99@ohyster.com</p>
+			</div>
+			
+			<div data-role="collapsible" data-collapsed-icon="arrow-d">
+			
+			
+					<h3>Events Attended</h3>
+					 <ul data-role="listview" data-insert="true" >
+						<li> Oyster Night at The Lobster Place</li>
+						<li> Billion Oyster Party</li>
+					</ul>
+				</div>
+			
+			<div data-role="collapsible" data-collapsed-icon="arrow-d">
+			
+			
+					<h3>Friends Who Own Plots in my Reef</h3>
+					 <ul data-role="listview" data-insert="true" >
+						<li> Harpeet Singh </li>
+						<li> Nicholas Austin </li>
+						<li> Bruce Wayne </li>
+					</ul>
+				</div>
+				
+				<div data-role="collapsible" data-collapsed-icon="arrow-d">
+			
+			
+					<h3> Upcoming Events by Restaurants You Have Visited </h3>
+					 <ul data-role="listview" data-insert="true" >
+						<li> Buy 8, Get 1 Free Oyster Night</li>
+					</ul>
+				</div>
+				
+			
+			<div data-role="footer" style="position:fixed;bottom:0; width:100%">
+				<div data-id="navig" data-role="navbar">
+				   <ul>
+					  <li><a href="#map-page"class="ui-btn"><img src="assets/home.gif" style="width:16px;border-radius:8px;margin:0;padding:0"/>&nbsp;&nbsp; Maps</a></li>
+					  <li> <a href="#page2"class="ui-btn"><img src="assets/donate.gif" style="width:16px;border-radius:8px;margin:0;padding:0"/> &nbsp;&nbsp;Donate</a></li>
+					  <li><a href="#page3" class="ui-btn-active ui-state-persist"><img src="assets/profile.gif" style="width:16px;border-radius:8px;margin:0;padding:0"/>&nbsp;&nbsp;Profile</a></li>
+					  <li><a href="#page4" class="ui-btn"><img src="assets/settings.gif" style="width:16px;border-radius:8px;margin:0;padding:0"/> &nbsp;&nbsp;About </a></li>
+				   </ul>
+				</div>
+			</div>
+			
+		</div>
+		 
+		 <!-- Page 4: About -->
+		 
+		 <div data-role="page" id="page4">
+			
+			<div data-role="header">
+				<h1 style="font-size:25px"; class="p";> BOP </h1>
+			</div>
+			
+			<div data-role="content">
+					<h1> About the Project </h1>
+						<p>BOP IS AN ECOSYSTEM RESTORATION AND EDUCATION PROJECT aimed at restoring 
+						one billion live oysters to New York Harbor and engaging hundreds of thousands 
+						of school children through restoration based STEM education programs.  Students
+						at New York Harbor School have been growing and restoring oysters in New York 
+						Harbor for the last six years.  They have learned to SCUBA dive safely, raise 
+						oyster larvae, operate and maintain vessels, build and operate commercial-scaled
+						oyster nurseries, design underwater monitoring equipment and conduct long-term 
+						authentic research projects all in the murky, contaminated, fast moving waters 
+						of one of the busiest ports in the country.  Together and with the help of many 
+						partners these students have restored over eleven million oysters. Thirty-six public 
+						schools have partnered with the project to provide authentic, place-based science and
+						math lessons through the lens of oyster restoration.  Each year, thousands of students
+						participate in these learning opportunities.</p>
+						
+					<h1>Why Oysters?</h1>
+					<p>Oysters were the keystone species and original ecosystem engineers of New York Harbor.
+					Oyster reefs once covered more than 220,000 acres of the Hudson River estuary. They provided
+					valuable ecosystem services to the region by filtering water, providing habitat for other
+					marine species and attenuating wave energy. Today, oysters are functionally extinct in the
+					Harbor as a result of overharvesting, dredging and pollution. The absence of oysters has
+					impaired our estuary’s ability to clean the water and absorb excess nitrogen; the loss 
+					of reefs has reduced protective habitat, destabilized the sea floor and left our shoreline 
+					vulnerable to destructive wave action. The Billion Oyster Project aims to reverse these 
+					effects by bringing oysters and their reef habitat back to New York Harbor. Restoring 
+					oysters and reefs will, over time, restore the local marine ecosystem’s natural mechanisms
+					for maintaining itself, resulting in cleaner water and greater biodiversity. Moreover, 
+					engaging students and the general public in this work will build a culture of stewardship
+					and a more robust understanding and appreciation of the Harbor for future generations.</p>
+
+			</div>
+			
+			<div data-role="content">
+					<h1> Support </h1>
+						<form>
+							Type Questions Here:</br>
+							<input type="text" name="SupportQs">
+						</form>
+			</div>
+			
+			<script type="text/javascript" charset="utf-8">
+	
+					function showAlert()
+					{
+					alert("Your Support Ticket has been submitted and is greatly appreciated!");
+					}
+					function noenter() {
+  return !(window.event && window.event.keyCode == 13); }
+					</script>
+					<button type="button" onclick="showAlert ()">
+					Submit
+						</button>
+			
+			<div data-role="footer" style="position:fixed;bottom:0; width:100%">	
+				<div data-id="navig" data-role="navbar">
+				   <ul>
+					  <li><a href="#map-page"class="ui-btn"><img src="assets/home.gif" style="width:16px;border-radius:8px;margin:0;padding:0"/>&nbsp;&nbsp; Maps</a></li>
+					  <li> <a href="#page2"><img src="assets/donate.gif" style="width:16px;border-radius:8px;margin:0;padding:0"/>&nbsp;&nbsp;Donate</a></li>
+					  <li><a href="#page3" class="ui-btn"> <img src="assets/profile.gif" style="width:16px;border-radius:8px;margin:0;padding:0"/> &nbsp;&nbsp;Profile</a></li>
+					  <li><a href="#page4" class="ui-btn-active ui-state-persist"><img src="assets/settings.gif" style="width:16px;border-radius:8px;margin:0;padding:0"/>&nbsp;&nbsp; About
+					  </a></li>
+				   </ul>
+				</div>
+			 </div>
+		 
+		 </div>
+	 
+	 </body>
+</html>
+		
+		

@@ -1,0 +1,137 @@
+<!Doctype html>
+<html>
+   <head>
+      <title>Oyoyoyster</title>
+      
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  
+      <style>#map-page, #map-canvas { width: 100%; height: 70%; padding: 0; }</style>
+	  
+	  <link rel="stylesheet" href="themes/Bluetheme.min.css" /> 
+	  <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	  
+      <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+	  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+      <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	
+	  <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	  <script src="main.js"></script>
+   </head>
+   
+   <body>
+   
+	   <!-- Page 1 -->
+	   
+	  <div  data-role="page" id="map-page">
+			<div data-role="header" data-theme="a">
+				<h1>Maps</h1>
+			</div>
+			<div role="main" class="ui-content" id="map-canvas">
+				<!-- map loads here... -->
+			</div>
+				<div data-role="collapsible" data-collapsed-icon="arrow-d" data-filter="true" data-filter-placeholder="Participating Restaurants">
+					<h3>Restaurants</h3>
+					 <ul data-role="listview" data-insert="true" >
+						<li> <a href="https://foursquare.com/aquagrillnyc"> Aquagrill</a> </li>
+						<li> <a href="https://foursquare.com/v/brooklyn-crab/4f107e84e5e852ca73ddd2fa">Brooklyn Crab</a></li>
+						<li> <a href="https://foursquare.com/v/lobster-place/49c42857f964a5209f561fe3"> The lobster place</a> </li>
+						<li> <a href="https://foursquare.com/v/grand-central-oyster-bar/3fd66200f964a52074e71ee3"> Grand Central Oyster Bar</a> </li>
+						<li> <a href="https://foursquare.com/oceananyc"> Oceana</a> </li>
+						<li> <a href="https://foursquare.com/v/maison-premiere/4d34a091c6cba35dec2f357a"> Maison Premiere</a> </li>
+					</ul>
+				</div>
+				<div style="height:40px">
+				</div>
+			<div data-role="footer" style="position:fixed;bottom:0; width:100%">
+				<div data-id="navig" data-role="navbar">
+				   <ul>
+					  <li><a href="#map-page"class="ui-btn ui-icon-location ui-btn-icon-left">Maps</a></li>
+					  <li> <a href="#page2"><img style="border-radius:15px" src="https://c.o0bg.com/rf/image_1200w/Boston/2011-2020/2014/12/16/BostonGlobe.com/BigPicture/Images/03c3c1dd49d04e3f85c2a3909d8e0002-03c3c1dd49d04e3f85c2a3909d8e0002-0.jpg" height="15px" width="15px" align="left"/> Donate</a></li>
+					  <li><a href="#page3" class="ui-btn ui-icon-user ui-btn-icon-left">Profile</a></li>
+					  <li><a href="#page4" class="ui-btn ui-icon-gear ui-btn-icon-left"> Settings </a></li>
+				   </ul>
+				</div>
+			</div>
+		 
+		 </div>
+		 
+		 <!-- Page 2: -->
+		 
+		 <div data-role="page" id="page2">
+			 
+			 <div data-role="header">
+				<h1>Donate</h1>
+			 </div>
+			 
+			<div data-role="content">
+				<p>Oysters</p>
+			</div>
+			
+			<div data-role="footer">
+				<div data-id="navig" data-role="navbar">
+				   <ul>
+					  <li><a href="#map-page"class="ui-btn ui-icon-location ui-btn-icon-left">Maps</a></li>
+					  <li> <a href="#page2"><img style="border-radius:15px" src="https://c.o0bg.com/rf/image_1200w/Boston/2011-2020/2014/12/16/BostonGlobe.com/BigPicture/Images/03c3c1dd49d04e3f85c2a3909d8e0002-03c3c1dd49d04e3f85c2a3909d8e0002-0.jpg" height="15px" width="15px" align="left"/> Donate</a></li>
+					  <li><a href="#page3" class="ui-btn ui-icon-user ui-btn-icon-left">Profile</a></li>
+					  <li><a href="#page4" class="ui-btn ui-icon-gear ui-btn-icon-left"> Settings </a></li>
+				   </ul>
+				</div>
+			 </div>
+			 
+		 </div>
+		 
+		 <!-- Page 3: -->
+		 
+		<div data-role="page" id="page3">
+			
+			<div data-role="header">
+				<h1>Profile</h1>
+			</div>
+			
+			<div data-role="content">
+					<h1> Profile </h1>
+					<p> James Zeller</p>
+			</div>
+			
+			<div data-role="footer">
+				<div data-id="navig" data-role="navbar">
+				   <ul>
+					  <li><a href="#map-page"class="ui-btn ui-icon-location ui-btn-icon-left">Maps</a></li>
+					  <li> <a href="#page2"><img style="border-radius:15px" src="https://c.o0bg.com/rf/image_1200w/Boston/2011-2020/2014/12/16/BostonGlobe.com/BigPicture/Images/03c3c1dd49d04e3f85c2a3909d8e0002-03c3c1dd49d04e3f85c2a3909d8e0002-0.jpg" height="15px" width="15px" align="left"/> Donate</a></li>
+					  <li><a href="#page3" class="ui-btn ui-icon-user ui-btn-icon-left">Profile</a></li>
+					  <li><a href="#page4" class="ui-btn ui-icon-gear ui-btn-icon-left"> Settings </a></li>
+				   </ul>
+				</div>
+			</div>
+			
+		</div>
+		 
+		 <!-- Page 4: -->
+		 
+		 <div data-role="page" id="page4">
+			
+			<div data-role="header">
+				<h1>Settings</h1>
+			</div>
+			
+			<div data-role="content">
+					<h1> Settings </h1>
+			</div>
+			
+			<div data-role="footer">	
+				<div data-id="navig" data-role="navbar">
+				   <ul>
+					  <li><a href="#map-page"class="ui-btn ui-icon-location ui-btn-icon-left">Maps</a></li>
+					  <li> <a href="#page2"><img style="border-radius:15px" src="https://c.o0bg.com/rf/image_1200w/Boston/2011-2020/2014/12/16/BostonGlobe.com/BigPicture/Images/03c3c1dd49d04e3f85c2a3909d8e0002-03c3c1dd49d04e3f85c2a3909d8e0002-0.jpg" height="15px" width="15px" align="left"/> Donate</a></li>
+					  <li><a href="#page3" class="ui-btn ui-icon-user ui-btn-icon-left">Profile</a></li>
+					  <li><a href="#page4" class="ui-btn ui-icon-gear ui-btn-icon-left"> Settings </a></li>
+				   </ul>
+				</div>
+			 </div>
+		 
+		 </div>
+	 
+	 </body>
+</html>
+		
+		

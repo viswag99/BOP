@@ -1,0 +1,13 @@
+body{
+	background-color: #1ca589;
+}
+
+*{
+	font-family: 'Oswald', sans-serif;
+	font-size: 25px;
+}
+
+#results{
+	font-size: 35px;
+	text-decoration: underline;
+}
