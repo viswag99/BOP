@@ -1,24 +1,19 @@
 h1{
-	font-size:100px;
-	color:#ffc125;
-	font-family: 'Bree Serif', serif;
-	text-align: center;
-	float:right,center;
-
-}
-h2{
-	font-size:100px;
-	color:#ffc125;
-	font-family: 'Bree Serif', serif;
+	font-size:75px;
+	color:#116493;
+	font-family: 'Oswald', sans-serif;
 	text-align: center;
 }
 body{
-	background-color:#3399FF;
+	background-color:white;
 }
-h3{
-	font-size:100px;
-	color:#ffc125;
-	font-family: 'Bree Serif', serif;
-	text-align: center;
-	float:right,center; 
+p{
+	font-size: 20px;
+	padding: 50px;
+	font-family: 'Dosis', sans-serif;
+}
+ul{
+	font-size: 20px;
+	padding: 50px;
+	font-family: 'Dosis', sans-serif;
 }
