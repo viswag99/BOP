@@ -3,7 +3,7 @@ h1{
 	color: #00022a;
 	background-color: #39648d;
 	padding: 50px;
-	font-size: 120px;
+	font-size: 100px;
 	border-width: 7px;
 	 background-image:url("https://ibbyskibby.files.wordpress.com/2013/06/1-pre-dive-water-view.jpg")!important;
 	border-style: solid;
@@ -18,8 +18,9 @@ h1{
 }
 ul{
 	width: 100%;
-	margin:0;
-	padding:0;
+	height: 0%;
+	margin: 0%;
+	padding: 0%;
 }
 
 li{
